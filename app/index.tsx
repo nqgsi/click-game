@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button, Image, ScrollView, Text, View } from "react-native";
 import * as Animatable from "react-native-animatable";
-// import { ScrollView } from "react-native-gesture-handler";
 
 export default function Index() {
   const [count, SetCount] = useState(0);
@@ -42,7 +41,7 @@ export default function Index() {
             style={{
               width: 200,
               height: 200,
-              marginRight: 400,
+              marginRight: -100,
             }}
           />
           <View
@@ -85,7 +84,13 @@ export default function Index() {
             </Animatable.View>
           )}
 
-          <Text style={{ color: "white", fontSize: 150 }}>{count1}</Text>
+          <Animatable.Text
+            style={{ color: "white", fontSize: 150 }}
+            animation="tada"
+            iterationCount="infinite"
+          >
+            {count1}
+          </Animatable.Text>
           <Text style={{ fontSize: 20, color: "white" }}>
             Planets Destroyed
           </Text>
@@ -123,6 +128,11 @@ export default function Index() {
               width: 300,
               height: 300,
             }}
+          />
+          <Button
+            title="continue"
+            onPress={() => SetCount1(0)}
+            color="#dbca12ff"
           />
         </View>
       )}
