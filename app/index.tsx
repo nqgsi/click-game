@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Button, Image, ScrollView, Text, View } from "react-native";
 import * as Animatable from "react-native-animatable";
-import { ScrollView } from "react-native-gesture-handler";
+// import { ScrollView } from "react-native-gesture-handler";
 
 export default function Index() {
   const [count, SetCount] = useState(0);
@@ -45,7 +45,14 @@ export default function Index() {
               marginRight: 400,
             }}
           />
-          <View style={{ display: "flex", flexDirection: "row" }}>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              marginRight: 350,
+              marginTop: 150,
+            }}
+          >
             <Animatable.Image
               animation="bounce"
               iterationCount="infinite"
@@ -55,13 +62,11 @@ export default function Index() {
               style={{
                 width: 100,
                 height: 100,
-                marginLeft: 200,
-                marginTop: 150,
               }}
             />
 
             <Animatable.Text animation="bounce" iterationCount="infinite">
-              <View style={{ marginTop: 150 }}>
+              <View>
                 <Text style={{ fontSize: 50, color: "white" }}>X {count}</Text>
               </View>
             </Animatable.Text>
